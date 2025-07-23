@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=4 uid="uid://oemeixrwjbi8"]
+
+[ext_resource type="Script" uid="uid://cmq2lauwa7iqw" path="res://systems/Interaction/furniture.gd" id="1_jhh4c"]
+[ext_resource type="PackedScene" uid="uid://nfbpn4i73hpv" path="res://systems/Interaction/interactable.tscn" id="2_312co"]
+[ext_resource type="PackedScene" uid="uid://damlrreddro0d" path="res://props/FurnitureProps/furniture_stain.tscn" id="3_312co"]
+[ext_resource type="Texture2D" uid="uid://bhejuglxjmirc" path="res://Decals/dirt_stains.png" id="4_2u5cy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pigam"]
+resource_name = "Wood.005"
+cull_mode = 2
+albedo_color = Color(0.550628, 0.328782, 0.0614926, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dx52b"]
+_surfaces = [{
+"aabb": AABB(-3, -1.19209e-07, -3, 6, 12, 6),
+"format": 34359742465,
+"index_count": 348,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAACAAMAAAAEAAEABQABAAQABQAEAAAABQAGAAEAAwABAAYABQAAAAcAAAADAAcABgAIAAMABQAJAAYABgAJAAgACQAKAAgACQALAAoADAALAAkABQAMAAkADQAKAAsACAAKAA0ADQALAA4ADAAOAAsABwAMAAUADwANAA4ACAANABAAEAANAA8ABwAQAAwAEQAMAAUAEQAOAAwAEQAFABIAEgAFAAcAEQATAA4ADwAOABMAFAATABEAEgAUABEADwATABUAFAAVABMADwAVABYAFwAVABQAFwAWABUAGAAPABYAGAAWABcAEAAPABgAEgAZABQAFwAUABkAEgAaABkAFwAZABsAGQAaABwAGQAcABsAHAAaAB0AEgAdABoAHAAdAB4AGwAcAB4AHwAdABIAHwAeAB0AGwAeAB8AEgAHAB8AIAAXABsAIQAXACAAIQAYABcAIQAQABgAHwAQABgAIAAbACIAIgAbAB8AHwAHABAAIgAjACAAIQAgACMAHwAHACQAIgAfACUAHwAkACUAIgAmACMAAwAkAAcAIgAnACYAIgAoACcAJQAoACIAJgAnACkAKQAnACgAKQAoACoAJQAqACgAKwApACoAKwAqACUAJgApACsALAAjACYALAAmACsAIQAjACwAJAAlACEALQArACUALQAlACQALgAsACsALgArAC0ALwAhACwALwAsAC4AJAAhAC8AIQAvABAABwAvABAABwAkAC8ALwAuADAAEAAvADEALwAwADEAEAAxAAgAMgAwAC4AMQAwADIAMgAuAC0ACAAxADMAMQAyADMACAAzAAMAAwAzACQALQA0ADIAMwA1ACQAJAA2AC0ALQA2ADQAJAA1ADYAMgA0ADcAMgA3ADMANwA0ADYAMwA3ADUANwA2ADUA"),
+"name": "Wood.005",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("AQAAwAAAAAD6//8//v8/wAAAAAAAAEBAAQAAwAAAAAAAAEBAAQAAwAAAoEAAAEBA/v8/wAAAAAD6//8///8/wAAAoED7//8//v8/wAAAoEAAAEBAAQAAwAAAoED9//8/AQAAwAAAwEAAAEBA/v8/wAAAwEAAAEBAAQAAwAAAQEEAAEBA/v8/wAAAQEEAAEBA//8/wAAAwED7//8/AQAAwAAAQEH9//8///8/wAAAQEH7//8/AQAAwAAAQEH9//+/AQAAwAAAwED9//8/AABAwAAAwED9//+/AABAwAAAoED9//+/AABAwAAAQEH9//+/AABAwAAAwEAAAEDAAABAwAAAQEEAAEDAAQAAwAAAQEEAAEDAAQAAwAAAwEAAAEDAAQAAwAAAwED9//+/AABAwAAAoEAAAEDAAABAwAAAALQAAEDAAQAAwAAAoEAAAEDAAQAAwAAAALQAAEDAAABAwAAAALT9//+/AQAAwAAAALT9//+/AQAAwAAAoED9//+/////PwAAwEAAAEDA////PwAAwED9//+/////PwAAoEAAAEDAAABAQAAAwEAAAEDA////PwAAoED7//8/////PwAAoED9//+/AABAQAAAoEAAAEDAAABAQAAAALQAAEDA////PwAAALQAAEDAAABAQAAAALT9//+/////PwAAALT9//+/AABAQAAAoED9//+/AABAQAAAwED9//+/AABAQAAAoED6//8/AABAQAAAwED6//8/////PwAAwED7//8/AABAQAAAwEAAAEBA////PwAAwEAAAEBAAABAQAAAoEAAAEBA////PwAAoEAAAEBAAABAQAAAALQAAEBA////PwAAALT7//8/AABAQAAAALT6//8/////PwAAALQAAEBA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ofigh"]
+resource_name = "Chair_Cube_015"
+_surfaces = [{
+"aabb": AABB(-3, -1.19209e-07, -3, 6, 12, 6),
+"attribute_data": PackedByteArray("AADAPgAAAD8AAAA+AACAPgAAwD4AAIA+AAAAPgAAAD8AAMA+AACAPgAAwD4AAAAAAADAPgAAAAAAAMA+AACAPgAAwD4AAIA+AADAPgAAAAAAAMA+AACAPgAAwD4AAIA+AADAPgAAAAAAAMA+AACAPgAAwD4AAIA+AADAPgAAgD4AAMA+AACAPgAAwD4AAIA+FfLTPgAAQD8AAMA+AACAPwAAwD4AAEA/AAAgPwAAgD8AACA/AACAPxXy0z4AAEA/AAAgPwAAgD8V8tM+AABAP/g9zj4AAAA/AADAPgAAgD4AACA/AAAAPwAAwD4AAIA+FfLTPgAAQD/4Pc4+AAAAP/3G0j4AAAA/IGzMPgAAQD8V8tM+AABAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAPwAAwD4AAIA+AAAgPwAAAD8AACA/AAAAPwAAwD4AAIA+AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAgD4AACA/AACAPgAAID8AAAA/AAAgPwAAgD4AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAwD4AAIA+AAAgPwAAAD8AACA/AAAAPwAAwD4AAIA+AADAPgAAgD4AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAwD4AAIA+AAAgPwAAAD8AACA/AAAAPwAAwD4AAIA+/cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA//cbSPgAAAD/9xtI+AAAAP/3G0j4AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AADAPgAAgD4AACA/AAAAPwAAID8AAAA/AADAPgAAgD4AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AABgPwAAgD4AAGA/AAAAPwAAID8AAIA+AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAIA+AAAgPwAAgD4="),
+"format": 34359742487,
+"index_count": 348,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUABgAIAAQABgAJAAgACAAKAAQACQALAAgACQAMAAsACAANAAoADQAOAAoADQAPAA4ADgAQAAoADgARABAAEgATABQAEgAVABMAEgAWABUAEgAXABYAFwAYABYAFwAZABgAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AIAAiAB4AIAAjACIAIAAkACMAIAAlACQAJgAnACgAJgApACcAKgArACgAKgAoACwALAAoACcALAAnAC0ALgAtACcALgAvAC0AMAAsAC0AMAAxACwAMgAzADQAMgA1ADMANQA2ADMANQA3ADYANQA4ADcAOQA1ADIANQA5ADgAOQAyADoAOQA7ADgAOQA6ADwAOQA9ADsAOQA8AD0APgA/AEAAPgBBAD8AQABCAD4AQABDAEIAPwBEAEAAPwBFAEQARQBGAEQARQBHAEYARgBIAEQARgBJAEgASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMAUgBWAFUAUgBXAFYAVABYAFIAVABZAFgAWQBaAFgAWgBbAFgAWgBcAFsAWQBdAFoAWQBeAF0AWQBfAF4AYABhAGIAYABjAGEAYABkAGMAYABlAGQAYgBmAGAAYgBnAGYAYgBoAGcAYgBpAGgAYQBpAGIAYQBqAGkAawBsAG0AawBuAGwAbwBwAHEAbwByAHAAcwB0AHUAcwB2AHQAdwB4AHkAdwB6AHgAewB8AH0AewB+AHwAfwCAAIEAfwCCAIAAgwCEAIUAgwCGAIQAhwCIAIkAhwCKAIgAiwCMAI0AiwCOAIwAjwCQAJEAjwCSAJAAkwCPAJQAkwCUAJUAkwCVAJYAkwCWAJcAmACZAJoAmACbAJkAnACbAJgAnACdAJsAngCdAJwAngCfAJ0A"),
+"material": SubResource("StandardMaterial3D_pigam"),
+"name": "Wood.005",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 160,
+"vertex_data": PackedByteArray("AQAAwAAAAAD6//8//v8/wAAAAAAAAEBAAQAAwAAAAAAAAEBA/v8/wAAAAAD6//8/AQAAwAAAoEAAAEBA/v8/wAAAAAAAAEBA/v8/wAAAoEAAAEBAAQAAwAAAAAAAAEBAAQAAwAAAwEAAAEBA/v8/wAAAwEAAAEBA////PwAAoEAAAEBAAQAAwAAAQEEAAEBA/v8/wAAAQEEAAEBA////PwAAwEAAAEBAAABAQAAAoEAAAEBAAABAQAAAwEAAAEBA////PwAAALQAAEBAAABAQAAAALQAAEBA//8/wAAAoED7//8//v8/wAAAAAAAAEBA/v8/wAAAAAD6//8//v8/wAAAoEAAAEBA/v8/wAAAwEAAAEBA//8/wAAAwED7//8//v8/wAAAQEEAAEBA//8/wAAAQEH7//8/AQAAwAAAAAD6//8/AQAAwAAAoEAAAEBAAQAAwAAAoED9//8/AQAAwAAAAAAAAEBA//8/wAAAoED7//8/AQAAwAAAAAD6//8/AQAAwAAAoED9//8//v8/wAAAAAD6//8///8/wAAAwED7//8/AQAAwAAAwED9//8/////PwAAwED7//8/////PwAAoED7//8/AQAAwAAAoEAAAEBA////PwAAoED7//8/AQAAwAAAoED9//8/////PwAAoEAAAEBAAABAwAAAoED9//+///8/wAAAoED7//8/AQAAwAAAoED9//+/////PwAAoED9//+/AABAQAAAoED6//8/AABAQAAAoED9//+/////PwAAoEAAAEDAAQAAwAAAoEAAAEDAAQAAwAAAwED9//8/////PwAAwEAAAEBAAQAAwAAAwEAAAEBA////PwAAwED7//8/AABAQAAAwEAAAEBAAABAQAAAwED6//8/AABAQAAAwED9//+/////PwAAwED9//+/AQAAwAAAwED9//+/AABAQAAAwEAAAEDAAQAAwAAAwEAAAEDA////PwAAwEAAAEDAAABAQAAAoEAAAEBAAABAQAAAwED6//8/AABAQAAAoED6//8/AABAQAAAwEAAAEBAAABAQAAAALQAAEBAAABAQAAAALT6//8/AABAQAAAoED9//+/AABAQAAAwED9//+/AABAQAAAoEAAAEDAAABAQAAAwEAAAEDAAABAQAAAALT9//+/AABAQAAAALQAAEDA////PwAAoEAAAEBA////PwAAALT7//8/////PwAAoED7//8/////PwAAALQAAEBA////PwAAoED7//8/////PwAAwED9//+/////PwAAwED7//8/////PwAAoED9//+/////PwAAoEAAAEDAAABAQAAAwEAAAEDA////PwAAwEAAAEDAAABAQAAAoEAAAEDAAABAQAAAALQAAEDA////PwAAALQAAEDAAQAAwAAAoEAAAEDAAQAAwAAAwEAAAEDAAABAwAAAoEAAAEDAAQAAwAAAALQAAEDAAABAwAAAALQAAEDAAABAwAAAwEAAAEDAAABAwAAAQEEAAEDAAQAAwAAAQEEAAEDAAABAwAAAoED9//+/AABAwAAAwEAAAEDAAABAwAAAwED9//+/AABAwAAAoEAAAEDAAABAwAAAALQAAEDAAABAwAAAALT9//+///8/wAAAoED7//8///8/wAAAwED7//8///8/wAAAQEH7//8/AABAwAAAQEH9//+/AABAwAAAQEEAAEDAAQAAwAAAoED9//+/AQAAwAAAwED9//8/AQAAwAAAwED9//+/AQAAwAAAoED9//8/AQAAwAAAoED9//+/AABAwAAAALT9//+/AABAwAAAoED9//+/AQAAwAAAALT9//+/AQAAwAAAALQAAEDAAABAwAAAALT9//+/AQAAwAAAALT9//+/AABAwAAAALQAAEDAAQAAwAAAoEAAAEDAAQAAwAAAALT9//+/AQAAwAAAoED9//+/AQAAwAAAALQAAEDAAABAQAAAALT9//+/////PwAAALQAAEDA////PwAAALT9//+/AABAQAAAALQAAEDAAABAQAAAoED9//+/////PwAAALT9//+/////PwAAoED9//+/AABAQAAAALT9//+/////PwAAoED9//+/////PwAAALQAAEDA////PwAAoEAAAEDA////PwAAALT9//+/////PwAAALQAAEBAAABAQAAAALT6//8/////PwAAALT7//8/AABAQAAAALQAAEBA////PwAAoED7//8/AABAQAAAALT6//8/AABAQAAAoED6//8/////PwAAALT7//8/AQAAwAAAQEH9//8//v8/wAAAQEEAAEBA//8/wAAAQEH7//8/AQAAwAAAQEEAAEBAAQAAwAAAQEH9//+///8/wAAAQEH7//8/AABAwAAAQEH9//+/AABAwAAAQEEAAEDAAQAAwAAAQEEAAEDAAQAAwAAAwED9//+/AQAAwAAAQEEAAEDAAQAAwAAAwEAAAEDAAQAAwAAAQEH9//+/AQAAwAAAwED9//8/AQAAwAAAQEH9//8/AQAAwAAAwEAAAEBAAQAAwAAAQEEAAEBA/38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8/AAD/f/9///8AAP9//3///wAA/3//f///AAD/f/9///8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3//f///////f/9///////9//3///////3////+///////9//////////3//////////f/////////9/////////////v/////////+//////////7//////////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//////////v/////////+//////////7//////////v/////////+//////////7//////////v/////////+//////////7//////////v/////////+//////////7//////////v/////////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+//3//f////z//f/9/////P/9//3////8//3//f////z//fwAA////v/9/AAD///+//38AAP///7//fwAA////v////3////+/////f////7////9/////v////3////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f/9/////P/9//3////8//3//f////z//f/9/////PwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//////////v/////////+//////////7//////////v/9///////+//3///wAA/7//f///AAD/v/9///8AAP+//3///////7//f///////v/9///////+//3///////7//f///////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dx52b")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6fotr"]
+points = PackedVector3Array(-3, -1.19209e-07, -3, 3, -1.19209e-07, -3, -3, -1.19209e-07, 3, -3, 12, -3, 3, -1.19209e-07, 3, 3, 6, -3, -3, 12, 3, -2.00039, 12, -3, 3, 6, 3, -2.00039, 12, 3)
+
+[node name="Chair" type="RigidBody3D"]
+collision_layer = 9
+collision_mask = 3
+gravity_scale = 5.0
+center_of_mass_mode = 1
+can_sleep = false
+freeze_mode = 1
+script = ExtResource("1_jhh4c")
+metadata/_custom_type_script = "uid://cmq2lauwa7iqw"
+
+[node name="Chair" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+mesh = SubResource("ArrayMesh_ofigh")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+shape = SubResource("ConvexPolygonShape3D_6fotr")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("object") instance=ExtResource("2_312co")]
+object = NodePath("..")
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+shape = SubResource("ConvexPolygonShape3D_6fotr")
+
+[node name="FurnitureStain" parent="." instance=ExtResource("3_312co")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Decal" parent="FurnitureStain" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45321e-09, 0.0395001, 1)
+size = Vector3(2, 0.1, 2)
+
+[node name="CollisionShape3D" parent="FurnitureStain" index="1"]
+transform = Transform3D(-1, 7.10543e-15, -8.74228e-08, 0, -1, -8.74228e-08, -8.74228e-08, -8.74228e-08, 1, 5.24537e-07, 6, 0)
+shape = SubResource("ConvexPolygonShape3D_6fotr")
+
+[node name="Decal3" type="Decal" parent="FurnitureStain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2.00025, -2.42025, 0)
+layers = 8
+size = Vector3(2, 0.1, 2)
+texture_albedo = ExtResource("4_2u5cy")
+emission_energy = 0.0
+
+[node name="Decal2" type="Decal" parent="FurnitureStain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.04, 0)
+layers = 8
+size = Vector3(2, 0.1, 2)
+texture_albedo = ExtResource("4_2u5cy")
+emission_energy = 0.0
+
+[node name="Decal4" type="Decal" parent="FurnitureStain"]
+transform = Transform3D(1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 0, 0, 1, 2.04, -4.0205, -1.7)
+layers = 8
+size = Vector3(2, 0.1, 2)
+texture_albedo = ExtResource("4_2u5cy")
+emission_energy = 0.0
+
+[node name="Decal5" type="Decal" parent="FurnitureStain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.99975, -3.42025, 1)
+layers = 8
+size = Vector3(2, 0.1, 2)
+texture_albedo = ExtResource("4_2u5cy")
+emission_energy = 0.0
+
+[node name="Decal6" type="Decal" parent="FurnitureStain"]
+transform = Transform3D(1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 0, 0, 1, 3.04, -4.0205, -1.7)
+layers = 8
+size = Vector3(2, 0.1, 2)
+texture_albedo = ExtResource("4_2u5cy")
+emission_energy = 0.0
+
+[node name="Decal7" type="Decal" parent="FurnitureStain"]
+transform = Transform3D(1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 0, 0, 1, 3.04, -2.0205, 0.3)
+layers = 8
+size = Vector3(2, 0.1, 2)
+texture_albedo = ExtResource("4_2u5cy")
+emission_energy = 0.0
+
+[node name="Decal9" type="Decal" parent="FurnitureStain"]
+transform = Transform3D(1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 0, 0, 1, 3.04, -3.0205, 1.3)
+layers = 8
+size = Vector3(2, 0.1, 2)
+texture_albedo = ExtResource("4_2u5cy")
+emission_energy = 0.0
+
+[node name="Decal8" type="Decal" parent="FurnitureStain"]
+transform = Transform3D(1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 0, 0, 1, 3.04, -0.0205, -0.7)
+layers = 8
+size = Vector3(2, 0.1, 2)
+texture_albedo = ExtResource("4_2u5cy")
+emission_energy = 0.0
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactable"]
+[editable path="FurnitureStain"]

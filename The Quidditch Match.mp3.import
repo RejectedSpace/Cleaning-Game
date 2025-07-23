@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byx7c21ov65nu"
+path="res://.godot/imported/The Quidditch Match.mp3-65d181ad802480fbfc6e535be65f6bf4.mp3str"
+
+[deps]
+
+source_file="res://The Quidditch Match.mp3"
+dest_files=["res://.godot/imported/The Quidditch Match.mp3-65d181ad802480fbfc6e535be65f6bf4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

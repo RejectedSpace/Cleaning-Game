@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://damlrreddro0d"]
+
+[ext_resource type="Script" uid="uid://dgin5ikvgmgo8" path="res://props/FurnitureProps/furniture_stain.gd" id="1_66alo"]
+[ext_resource type="Texture2D" uid="uid://bhejuglxjmirc" path="res://Decals/dirt_stains.png" id="2_q2n65"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aqawr"]
+size = Vector3(8, 2, 8)
+
+[node name="FurnitureStain" type="Area3D"]
+collision_layer = 8
+collision_mask = 15
+script = ExtResource("1_66alo")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0395001, 0)
+layers = 8
+size = Vector3(8, 0.1, 10)
+texture_albedo = ExtResource("2_q2n65")
+emission_energy = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_aqawr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

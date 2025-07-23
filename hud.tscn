@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh57lw136agir"]
+
+[ext_resource type="Script" uid="uid://dp38ceuupf0wo" path="res://hud.gd" id="1_37p78"]
+
+[node name="HUD" type="Node2D"]
+script = ExtResource("1_37p78")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 191.0
+offset_bottom = 132.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 133.0
+offset_bottom = 129.0
+text = "Trash Cleaned: /
+Furntiture:
+    Placed:
+    Cleaned:
+Spills Cleaned:"

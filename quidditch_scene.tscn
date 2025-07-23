@@ -1,0 +1,144 @@
+[gd_scene load_steps=14 format=3 uid="uid://bbym0y43esa7v"]
+
+[ext_resource type="PackedScene" uid="uid://we0f38ndsf1h" path="res://props/QuidditchProps/quidditch.tscn" id="1_k8kye"]
+[ext_resource type="Script" uid="uid://c0o5ksuk6163u" path="res://quidditch_scene.gd" id="1_t0frk"]
+[ext_resource type="PackedScene" uid="uid://c0vjfjo6hnh4v" path="res://props/QuidditchProps/quidditch_player.tscn" id="3_4uypv"]
+[ext_resource type="PackedScene" uid="uid://fh8nbcl2df5j" path="res://props/HouseBuildingProps/ground.tscn" id="3_j6gqm"]
+[ext_resource type="PackedScene" uid="uid://dd5keq4icirj5" path="res://props/QuidditchProps/golden_snitch.tscn" id="4_4uypv"]
+[ext_resource type="PackedScene" uid="uid://bjkw83mpqmy6b" path="res://quidditch_hud.tscn" id="6_f1hlu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4uypv"]
+sky_horizon_color = Color(0.513726, 0.552941, 0.607843, 1)
+ground_bottom_color = Color(0.513726, 0.552941, 0.607843, 1)
+ground_horizon_color = Color(0.513726, 0.552941, 0.607843, 1)
+
+[sub_resource type="Sky" id="Sky_1bvp3"]
+sky_material = SubResource("ProceduralSkyMaterial_4uypv")
+
+[sub_resource type="Environment" id="Environment_t0frk"]
+background_mode = 2
+sky = SubResource("Sky_1bvp3")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.05
+tonemap_mode = 3
+volumetric_fog_albedo = Color(0.65834, 0.65834, 0.65834, 1)
+volumetric_fog_emission = Color(0, 0, 0.137255, 1)
+volumetric_fog_emission_energy = 0.01
+volumetric_fog_anisotropy = -0.3
+volumetric_fog_length = 32.0
+adjustment_brightness = 1.3
+
+[sub_resource type="Curve3D" id="Curve3D_t0frk"]
+closed = true
+_data = {
+"points": PackedVector3Array(190, -444, -452, 38, 192, -33, -425, 397, -50, -48, -190, -651, -18, 382, 77, -44, 473, 496, 342, 5, -318, 82, -526, 124, -342, 364, 2, 164, -156, -152, -248, 66, -330, -11, 526, -195, 254, -472, -93, -50, 57, -100, 102, 208, 71, -158, 319, 4, 72, 280, -31, 0, 116, 409, -48, 78, 121, -227, -86, -252, 168, 495, 87, 60, -400, 376, 329, 171, -692, 155, 157, -339, -99, 143, 376, -39, 140, -692, -710, 228, 50, 68, -62, -323, 0, 0, 0, 93, 336, -224, -145, -234, 548, -22, -282, 227, 750, 504, -242, 257, -556, -583, 155, -339, 122, 299, 302, -137, -325, -57, -583, 274, -200, 122, -601, 190, -288, -154, 0, 352, 218, 20, 295, 202, 320, 268, -340, -148, 363, 221, 287, -726, 310, 289, 267),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 15
+
+[sub_resource type="Animation" id="Animation_t0frk"]
+resource_name = "End"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuidditchPlayer:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.196667, 1.19667, 1.33, 1.56333, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-594, 524.82, -27.6512), Vector3(-594, 524.82, -27.6512), Vector3(-517, 518.82, -27.6512), Vector3(429, 426.82, 1.34879), Vector3(489, 412.82, 1.34879), Vector3(582, 453.82, 1.34879), Vector3(835, 589.82, 1.34879)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuidditchPlayer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.09667, 1.22167, 1.34667, 1.47167, 1.59667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 1.5708), Vector3(0, -1.5708, 3.14159), Vector3(0, -1.5708, 4.71239), Vector3(0, -1.5708, 6.28319)]
+}
+
+[sub_resource type="Animation" id="Animation_f1hlu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuidditchPlayer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 344.82, -0.651215)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuidditchPlayer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_twn20"]
+_data = {
+&"End": SubResource("Animation_t0frk"),
+&"RESET": SubResource("Animation_f1hlu")
+}
+
+[node name="QuidditchScene" type="Node3D"]
+script = ExtResource("1_t0frk")
+
+[node name="Quidditch" parent="." instance=ExtResource("1_k8kye")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 13, 0)
+shadow_enabled = true
+directional_shadow_split_3 = 0.755
+directional_shadow_fade_start = 0.925
+directional_shadow_max_distance = 256.0
+directional_shadow_pancake_size = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t0frk")
+
+[node name="Ground" parent="." instance=ExtResource("3_j6gqm")]
+transform = Transform3D(1629.1, 0, 0, 0, 1, 0, 0, 0, 3598.61, 0, -4, 0)
+
+[node name="QuidditchPlayer" parent="." node_paths=PackedStringArray("world") instance=ExtResource("3_4uypv")]
+transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, 0, 344.82, -0.651215)
+motion_mode = 1
+world = NodePath("..")
+
+[node name="GoldenSnitch" parent="." instance=ExtResource("4_4uypv")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 139, 0)
+sync_to_physics = false
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 111, 0)
+curve = SubResource("Curve3D_t0frk")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.655683, -0.730355, -0.191447, -2.98021e-08, 0.253562, -0.967314, 0.755028, 0.634255, 0.166257, -425, 397, -50)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_twn20")
+}
+
+[node name="QuidditchHud" parent="." instance=ExtResource("6_f1hlu")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

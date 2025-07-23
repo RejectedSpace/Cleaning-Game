@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bjkw83mpqmy6b"]
+
+[node name="QuidditchHud" type="Node2D"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 145.0
+offset_bottom = 60.0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 126.0
+offset_bottom = 24.0
+text = "FOCUS Meter:
+100%"
+horizontal_alignment = 1

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=4 uid="uid://dyk8g1s3k526g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tr28"]
+resource_name = "Wood.002"
+cull_mode = 2
+albedo_color = Color(0.550628, 0.328782, 0.0614926, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_63rmx"]
+_surfaces = [{
+"aabb": AABB(-8.94273, -0.50525, -19.7901, 17.8855, 0.50525, 39.5802),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("BQAGAAcABQAEAAYAAgAGAAAAAgAHAAYAAwAAAAEAAwACAAAAAQAGAAQAAQAAAAYABQACAAMABQAHAAIAAQAFAAMAAQAEAAUA"),
+"name": "Wood.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("ZxUPwQAAAAAnUp5BZxUPwQAAAAAoUp7BZxUPQQAAAAAnUp5BZxUPQQAAAAAoUp7BZxUPwQtYAb8oUp7BZxUPQQtYAb8oUp7BZxUPwQtYAb8nUp5BZxUPQQtYAb8nUp5B")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mplsw"]
+resource_name = "FloorTile_Cube_009"
+_surfaces = [{
+"aabb": AABB(-8.94273, -0.50525, -19.7901, 17.8855, 0.50525, 39.5802),
+"attribute_data": PackedByteArray("AADAPgAAAAAAAGA/AACAPgAAID8AAIA/FfLTPgAAQD8AAGA/AAAAPxXy0z4AAEA/AADAPgAAgD4AACA/AACAPgAAwD4AAIA+/cbSPgAAAD8AACA/AAAAPwAAID8AAAA/IGzMPgAAQD8AAAA+AAAAPwAAwD4AAEA/+D3OPgAAAD8AAMA+AAAAP/g9zj4AAAA/AADAPgAAAAAAAAA+AACAPgAAwD4AAIA/AADAPgAAgD4AAMA+AACAPgAAwD4AAIA+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("EAATABYAEAANABMABgASAAAABgAVABIACgABAAQACgAHAAEABQAUAA4ABQACABQAEQAIAAsAEQAXAAgAAwAPAAkAAwAMAA8A"),
+"material": SubResource("StandardMaterial3D_7tr28"),
+"name": "Wood.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("ZxUPwQAAAAAnUp5BZxUPwQAAAAAnUp5BZxUPwQAAAAAnUp5BZxUPwQAAAAAoUp7BZxUPwQAAAAAoUp7BZxUPwQAAAAAoUp7BZxUPQQAAAAAnUp5BZxUPQQAAAAAnUp5BZxUPQQAAAAAnUp5BZxUPQQAAAAAoUp7BZxUPQQAAAAAoUp7BZxUPQQAAAAAoUp7BZxUPwQtYAb8oUp7BZxUPwQtYAb8oUp7BZxUPwQtYAb8oUp7BZxUPQQtYAb8oUp7BZxUPQQtYAb8oUp7BZxUPQQtYAb8oUp7BZxUPwQtYAb8nUp5BZxUPwQtYAb8nUp5BZxUPwQtYAb8nUp5BZxUPQQtYAb8nUp5BZxUPQQtYAb8nUp5BZxUPQQtYAb8nUp5B/3//f////z//f///AAD/vwAA/3//f/////////9/////f///AAD/vwAA/3//f////3//f////z//f///AAD/v////3//f/////////9/////f///AAD/v////3//f/////////9/////fwAA////vwAA/3//f/////////9/////fwAA////v////3//f////3//f////z//fwAA////vwAA/3//f////3//f////z//fwAA////v////3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_63rmx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5sp05"]
+size = Vector3(32, 1, 32)
+
+[node name="FloorTile" type="StaticBody3D"]
+collision_layer = 2
+
+[node name="FloorTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.78916, 0, 0, 0, 1.97922, 0, 0, 0, 0.808484, 0, 0, 0)
+mesh = SubResource("ArrayMesh_mplsw")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_5sp05")

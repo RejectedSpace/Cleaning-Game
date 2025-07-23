@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://qqswly5bl3a5"]
+
+[ext_resource type="Script" uid="uid://j10rr3db1wux" path="res://audio_manager.gd" id="1_bq1v2"]
+[ext_resource type="AudioStream" uid="uid://cybvdc7uncdq8" path="res://Relaxation.mp3" id="2_6jj5d"]
+[ext_resource type="AudioStream" uid="uid://c2c02q6agewp4" path="res://Qudditch.mp3" id="3_6jj5d"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_bq1v2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6jj5d")
+volume_db = -25.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6jj5d")
+parameters/looping = true

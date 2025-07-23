@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://4xlvhgr088le"]
+
+[ext_resource type="Script" uid="uid://cmq2lauwa7iqw" path="res://systems/Interaction/furniture.gd" id="1_ujsiy"]
+[ext_resource type="PackedScene" uid="uid://nfbpn4i73hpv" path="res://systems/Interaction/interactable.tscn" id="2_hlpsc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qi1vu"]
+
+[node name="Furniture" type="RigidBody3D"]
+collision_layer = 9
+collision_mask = 3
+gravity_scale = 5.0
+center_of_mass_mode = 1
+can_sleep = false
+script = ExtResource("1_ujsiy")
+
+[node name="Interactable" parent="." instance=ExtResource("2_hlpsc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_qi1vu")
+
+[editable path="Interactable"]
