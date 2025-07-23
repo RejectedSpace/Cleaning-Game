@@ -9,10 +9,6 @@ const rotationThreshold = 0.5
 
 #Override
 func _ready() -> void:
-	if(Global.positionsDictionary.has(name)):
-		position = Global.positionsDictionary.get(name)
-	if(Global.rotationsDictionary.has(name)):
-		rotation = Global.rotationsDictionary.get(name)
 	$Interactable.grabbable = true
 	if(!Global.furnitureDictionary.has(get_path())):
 		Global.totalFurniture += 1

@@ -36,3 +36,14 @@ func get_item_height() -> float:
 
 func drop_object() -> void:
 	object_held=null
+
+func get_data():
+	return {
+		"Object Held": object_held.get_instance_id(),
+		"Cached Closest": cached_closest.get_instance_id()
+	}
+
+func load_data(data):
+	print(instance_from_id(data["Object Held"]))
+	object_held = instance_from_id(data["Object Held"])
+	cached_closest = instance_from_id(data["Cached Closest"])

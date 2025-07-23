@@ -11,20 +11,10 @@ var rotationOffsetY: float
 var rotationQueue: Vector3
 var stopSpin = false
 var options = [5,4,3]
+var cleaned = false
 
 func _ready() -> void:
-	if(Global.positionsDictionary.has(name)):
-		position = Global.positionsDictionary.get(name)
-	if(Global.rotationsDictionary.has(name)):
-		rotation = Global.rotationsDictionary.get(name)
 	$Interactable.grabbable = true
-	if(trash):
-		if(Global.trashDictionary.has(name)):
-			if(Global.trashDictionary.get(name)):
-				queue_free()
-		else:
-			Global.totalTrash += 1
-			Global.trashDictionary.set(name,false)
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	if pickedUp:
@@ -42,8 +32,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			state.angular_velocity = Vector3(0, 0, 0)
 	elif(position.y < 0):
 		position.y = 0
-	Global.positionsDictionary.set(name,position)
-	Global.rotationsDictionary.set(name,rotation)
 
 func push(distance: float) -> void:
 	dist += distance
@@ -67,3 +55,23 @@ func physics_rotate_y(val: float):
 
 func physics_rotate_z(val: float):
 	rotationQueue.z+=val
+
+func clean(isCleaned):
+	cleaned = isCleaned
+	visible = !isCleaned
+	if(isCleaned):
+		process_mode = PROCESS_MODE_DISABLED
+	else:
+		process_mode = PROCESS_MODE_INHERIT
+
+func get_data():
+	return {
+		"Position" : position,
+		"Rotation" : rotation,
+		"Cleaned" : cleaned
+	}
+
+func load_data(data):
+	position = data["Position"]
+	rotation = data["Rotation"]
+	clean(data["Cleaned"])

@@ -126,8 +126,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if(event is InputEventMouseButton):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif(event.is_action_pressed("ui_cancel")):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_parent().open_menu()
+		if(Global.paused):
+			get_parent().close_menu()
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			get_parent().open_menu()
 	if(Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED):
 		if(event is InputEventMouseMotion):
 			if(turn_mode_enabled() and interactor.object_held):
@@ -152,3 +155,17 @@ func get_direction_x() -> float:
 
 func get_direction_y() -> float:
 	return camera.rotation.x
+
+func get_data():
+	return {
+		"Position" : position,
+		"RotationY" : rotation.y,
+		"RotationX" : $Camera3D.rotation.x,
+		"Interactor" : interactor.get_data()
+	}
+
+func load_data(data):
+	position = data["Position"]
+	rotation.y = data["RotationY"]
+	$Camera3D.rotation.x = data["RotationX"]
+	interactor.load_data(data["Interactor"])

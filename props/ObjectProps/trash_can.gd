@@ -7,7 +7,6 @@ func _process(delta: float) -> void:
 func _on_trash_compactor_body_entered(body: Node3D) -> void:
 	if body is GrabbableObject and body.trash:
 		Global.trashCleaned+=1
-		Global.trashDictionary.set(body.get_path(),true)
-		body.queue_free()
+		body.clean(true)
 	elif body is RigidBody3D:
 		body.linear_velocity = -2.5*body.linear_velocity

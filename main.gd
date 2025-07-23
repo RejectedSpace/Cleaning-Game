@@ -2,6 +2,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.cur_scene = self
 	Global.load_data()
 	AudioManager.standard_song()
 	if(Global.visitedHogwarts):
@@ -29,3 +30,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func open_menu() -> void:
 	$CanvasLayer/Menu.visible=true
 	Global.paused = true
+
+func close_menu() -> void:
+	$CanvasLayer/Menu._on_resume_button_pressed()

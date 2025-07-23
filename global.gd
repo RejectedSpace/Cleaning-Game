@@ -1,6 +1,8 @@
 extends Node
 
-var save_path = "user://cleaningGame.save"
+var cur_scene: Node3D
+var save_path = "N:/Save/cleaningGame.save"
+var saveData
 var totalTrash: int
 var trashCleaned: int
 var furnitureCleaned: int
@@ -11,18 +13,21 @@ var spillsCleaned: int
 var totalSpills: int
 var spillsCleanedDictionary: Dictionary
 var stainsCleanedDictionary: Dictionary
-var positionsDictionary: Dictionary
-var rotationsDictionary: Dictionary
 var furnitureDictionary: Dictionary
-var trashDictionary: Dictionary
 var visitedHogwarts: bool
 var hasKey: bool
 var paused
 
 func _ready() -> void:
-	load_data()
+	pass
 
 func save():
+	saveData = []
+	for node in cur_scene.find_child("House").get_children():
+		if(node is GrabbableObject):
+			saveData.append(node.get_data())
+	saveData.append(cur_scene.find_child("Player").get_data())
+	
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	file.store_var(totalTrash)
 	file.store_var(trashCleaned)
@@ -34,12 +39,11 @@ func save():
 	file.store_var(totalSpills)
 	file.store_var(spillsCleanedDictionary)
 	file.store_var(stainsCleanedDictionary)
-	file.store_var(positionsDictionary)
-	file.store_var(rotationsDictionary)
 	file.store_var(furnitureDictionary)
-	file.store_var(trashDictionary)
 	file.store_var(visitedHogwarts)
 	file.store_var(hasKey)
+	file.store_var(saveData)
+	file.close()
 
 func load_data():
 	if data_exists():
@@ -54,12 +58,17 @@ func load_data():
 		totalSpills = file.get_var(true)
 		spillsCleanedDictionary = file.get_var(true)
 		stainsCleanedDictionary = file.get_var(true)
-		positionsDictionary = file.get_var(true)
-		rotationsDictionary = file.get_var(true)
 		furnitureDictionary = file.get_var(true)
-		trashDictionary=file.get_var(true)
 		visitedHogwarts = file.get_var(true)
 		hasKey=file.get_var(true)
+		saveData=file.get_var(true)
+		var i = 0
+		for node in cur_scene.find_child("House").get_children():
+			if(node is GrabbableObject):
+				node.load_data(saveData[i])
+				i+=1
+		cur_scene.find_child("Player").load_data(saveData[i])
+		file.close()
 
 func data_exists():
 	return FileAccess.file_exists(save_path)
