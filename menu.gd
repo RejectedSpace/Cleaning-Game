@@ -10,8 +10,8 @@ func _on_save_button_pressed() -> void:
 	_on_resume_button_pressed()
 
 func _on_load_button_pressed() -> void:
-	Global.load_data()
-	_on_resume_button_pressed()
+	get_tree().reload_current_scene()
+	Global.paused = false
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

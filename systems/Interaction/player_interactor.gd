@@ -38,12 +38,23 @@ func drop_object() -> void:
 	object_held=null
 
 func get_data():
+	var objectID
+	var cachedID
+	if object_held:
+		objectID = object_held.get_instance_id()
+	else:
+		objectID = null
+	if cached_closest:
+		cachedID = cached_closest.get_instance_id()
+	else:
+		cachedID = null
 	return {
-		"Object Held": object_held.get_instance_id(),
-		"Cached Closest": cached_closest.get_instance_id()
+		"Object Held": objectID,
+		"Cached Closest": cachedID
 	}
 
 func load_data(data):
-	print(instance_from_id(data["Object Held"]))
-	object_held = instance_from_id(data["Object Held"])
-	cached_closest = instance_from_id(data["Cached Closest"])
+	if(data["Object Held"]):
+		interact(instance_from_id(data["Object Held"]))
+	if(data["Cached Closest"]):
+		cached_closest = instance_from_id(data["Cached Closest"])
