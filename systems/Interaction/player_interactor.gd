@@ -41,7 +41,7 @@ func get_data():
 	var objectID
 	var cachedID
 	if object_held:
-		objectID = object_held.get_instance_id()
+		objectID = object_held.get_path()
 	else:
 		objectID = null
 	if cached_closest:
@@ -55,6 +55,6 @@ func get_data():
 
 func load_data(data):
 	if(data["Object Held"]):
-		interact(instance_from_id(data["Object Held"]))
+		get_node(data["Object Held"]).emit_signal("interacted",self)
 	if(data["Cached Closest"]):
 		cached_closest = instance_from_id(data["Cached Closest"])
