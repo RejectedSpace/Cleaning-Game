@@ -29,14 +29,11 @@ func save():
 	saveData.append(cur_scene.find_child("Player").get_data())
 	
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	file.store_var(totalTrash)
 	file.store_var(trashCleaned)
 	file.store_var(furnitureCleaned)
-	file.store_var(totalFurnitureStains)
 	file.store_var(totalFurniture)
 	file.store_var(furniturePlaced)
 	file.store_var(spillsCleaned)
-	file.store_var(totalSpills)
 	file.store_var(spillsCleanedDictionary)
 	file.store_var(stainsCleanedDictionary)
 	file.store_var(furnitureDictionary)
@@ -46,16 +43,16 @@ func save():
 	file.close()
 
 func load_data():
+	totalFurnitureStains = 0
+	totalSpills = 0
+	totalTrash = 0
 	if data_exists():
 		var file = FileAccess.open(save_path,FileAccess.READ)
-		totalTrash = file.get_var(true)
 		trashCleaned=file.get_var(true)
 		furnitureCleaned=file.get_var(true)
-		totalFurnitureStains= file.get_var(true)
 		totalFurniture= file.get_var(true)
 		furniturePlaced= file.get_var(true)
 		spillsCleaned = file.get_var(true)
-		totalSpills = file.get_var(true)
 		spillsCleanedDictionary = file.get_var(true)
 		stainsCleanedDictionary = file.get_var(true)
 		furnitureDictionary = file.get_var(true)

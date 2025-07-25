@@ -15,6 +15,8 @@ var cleaned = false
 
 func _ready() -> void:
 	$Interactable.grabbable = true
+	if trash:
+		Global.totalTrash += 1
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	if pickedUp:
@@ -48,30 +50,33 @@ func _on_interactable_interacted(interactor: Interactor) -> void:
 	lastInteractor = interactor
 	playerNode = interactor.player
 	pickedUp = !pickedUp
-	freeze=false
+	freeze = false
 
 func physics_rotate_y(val: float):
-	rotationQueue.y+=val
+	rotationQueue.y += val
 
 func physics_rotate_z(val: float):
-	rotationQueue.z+=val
+	rotationQueue.z += val
 
-func clean(isCleaned):
-	cleaned = isCleaned
-	visible = !isCleaned
-	if(isCleaned):
-		process_mode = PROCESS_MODE_DISABLED
-	else:
-		process_mode = PROCESS_MODE_INHERIT
+func clean():
+	cleaned = true
+	visible = false
+	process_mode = PROCESS_MODE_DISABLED
+	Global.trashCleaned += 1
 
 func get_data():
 	return {
 		"Position" : position,
 		"Rotation" : rotation,
+		"LVelocity" : linear_velocity,
+		"AVelocity" : angular_velocity,
 		"Cleaned" : cleaned
 	}
 
 func load_data(data):
 	position = data["Position"]
 	rotation = data["Rotation"]
-	clean(data["Cleaned"])
+	linear_velocity = data["LVelocity"]
+	angular_velocity = data["AVelocity"]
+	if(data["Cleaned"]):
+		clean()

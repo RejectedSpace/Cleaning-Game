@@ -21,7 +21,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("e"):
 		if object_held:
 			interact(object_held)
-			object_held=null
+			object_held = null
 		elif cached_closest:
 			interact(cached_closest)
 			if cached_closest.grabbable:
@@ -35,26 +35,24 @@ func get_item_height() -> float:
 	return collisionBox.position.y
 
 func drop_object() -> void:
-	object_held=null
+	object_held = null
 
 func get_data():
 	var objectID
-	var cachedID
+	var holdDist
 	if object_held:
 		objectID = object_held.get_path()
+		holdDist = object_held.object.dist
 	else:
 		objectID = null
-	if cached_closest:
-		cachedID = cached_closest.get_instance_id()
-	else:
-		cachedID = null
+		holdDist = 0
 	return {
-		"Object Held": objectID,
-		"Cached Closest": cachedID
+		"Object Held" : objectID,
+		"Holding Distance" : holdDist
 	}
 
 func load_data(data):
 	if(data["Object Held"]):
-		get_node(data["Object Held"]).emit_signal("interacted",self)
-	if(data["Cached Closest"]):
-		cached_closest = instance_from_id(data["Cached Closest"])
+		object_held = get_node(data["Object Held"])
+		interact(object_held)
+		object_held.object.dist = data["Holding Distance"]
